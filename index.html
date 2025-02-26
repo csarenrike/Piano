@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piano Game</title>
+  <style>
+    .piano {
+      display: flex;
+    }
+    .key {
+      width: 60px;
+      height: 200px;
+      margin: 2px;
+      border: 1px solid black;
+      background-color: white;
+      text-align: center;
+      line-height: 200px;
+      cursor: pointer;
+    }
+    .key.black {
+      background-color: black;
+      color: white;
+      width: 40px;
+      height: 120px;
+      position: relative;
+      margin-left: -20px;
+      z-index: 1;
+    }
+    .panel {
+      margin-top: 20px;
+      border: 2px solid #000000;
+      min-height: 50px;
+      padding: 10px;
+    }
+    .note {
+      display: inline-block;
+      padding: 5px 10px;
+      background: #f0f0f0;
+      margin: 5px;
+      border: 1px solid #ccc;
+      cursor: grab;
+    }
+    .message {
+  font-size: 1.2em;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.timer {
+  font-size: 1.5em;
+  margin: 20px 0;
+  color: blue;
+  font-weight: bold;
+}
+
+button {
+  font-size: 1em;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.hits {
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: green;
+  font-weight: bold;
+}
+
+
+  </style>
+</head>
+<body>
+  <h1>Juego de Piano</h1>
+  <div class="piano Center" >
+    <div class="key" data-note="C">C</div>
+    <div class="key black" data-note="C#">C#</div>
+    <div class="key" data-note="D">D</div>
+    <div class="key black" data-note="D#">D#</div>
+    <div class="key" data-note="E">E</div>
+    <div class="key" data-note="F">F</div>
+    <div class="key black" data-note="F#">F#</div>
+    <div class="key" data-note="G">G</div>
+    <div class="key black" data-note="G#">G#</div>
+    <div class="key" data-note="A">A</div>
+    <div class="key black" data-note="A#">A#</div>
+    <div class="key" data-note="B">B</div>
+  </div>
+
+  <div id="message" class="message"></div>
+  <div id="hits" class="hits">Aciertos: 0</div>
+  <div id="timer" class="timer">0:00</div>
+  <button id="startTimerButton">Iniciar cronómetro</button>
+
+  <h2>Panel</h2>
+  <div class="panel" id="panel"></div>
+  <script src="script.js"></script>
+</body>
+</html>
